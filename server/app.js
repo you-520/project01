@@ -55,7 +55,7 @@ server.post('/login', (req, res) => {
 server.post('/register', (req, res) => {
   //获取post请求数据
   let obj = req.body;
-  console.log(obj);
+  // console.log(obj);
   //检测数据是否为空
   if (!obj.uname) {
     //send代表响应结束，不允许再次执行响应
@@ -86,7 +86,7 @@ server.post('/register', (req, res) => {
   //将数据插入数据库ice_user表中
   pool.query('INSERT INTO ice_user SET ?', [obj], (err, result) => {
     if (err) throw err;
-    console.log(result);
+    // console.log(result);
     //响应成功的对象
     res.send({ code: 200, msg: 'register suc' });
   })
